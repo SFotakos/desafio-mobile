@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="stonepagamentos.sfotakos.desafiomobile.ui.TransactionActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/noItems_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightGrey"
+            android:layout_gravity="center"
+            android:textSize="@dimen/textSize_extraLarge"
+            android:text="@string/transaction_no_items_text"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/transactionContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/shoppingCart_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <include
+                android:id="@+id/payment_content"
+                layout="@layout/content_payment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/transactionTotalLabel_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/transactionTotal_textView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/transactionTotal_textView"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Total"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_medium"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/transactionTotal_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/transactionTotalLabel_textView"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:maxLength="16"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_medium"
+                    android:textStyle="bold"
+                    tools:text="R$ 350,00"/>
+
+                <Button
+                    android:id="@+id/transactionAction_button"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/transactionTotal_textView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignTop="@+id/transactionTotalLabel_textView"
+                    android:layout_toLeftOf="@+id/transactionTotal_textView"
+                    android:layout_toStartOf="@+id/transactionTotal_textView"
+                    android:minWidth="250dp"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:text="@string/transaction_activity_action_proceed_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_medium"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/receiptContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/receipt_imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_receipt_grey_48dp"/>
+
+            <TextView
+                android:id="@+id/receiptMessage_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/textSize_extraLarge"/>
+
+            <TextView
+                android:id="@+id/receiptThanksMessage_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/receipt_thanks_message_text"
+                android:textColor="@color/lightGrey"
+                android:textSize="@dimen/textSize_large"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

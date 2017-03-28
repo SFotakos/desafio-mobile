@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/productImage_imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/addProduct_imageView"
+        android:layout_marginEnd="5dp"
+        android:layout_alignBottom="@+id/productTotalPrice_textView"
+        android:layout_marginRight="5dp"
+        tools:background="@color/colorAccent"
+        tools:src="@mipmap/ic_launcher_round"/>
+
+    <ImageView
+        android:id="@+id/addProduct_imageView"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/productAmount_textView"
+        android:layout_toRightOf="@+id/productAmount_textView"
+        android:padding="1dp"
+        android:src="@drawable/ic_add_white_24dp"
+        android:background="@color/lightGrey"/>
+
+    <TextView
+        android:id="@+id/productAmount_textView"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@+id/removeProduct_imageView"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/removeProduct_imageView"
+        android:layout_toRightOf="@+id/removeProduct_imageView"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:background="@drawable/quantity_view_background"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/textSize_medium"
+        tools:text="2"/>
+
+    <ImageView
+        android:id="@+id/removeProduct_imageView"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/productImage_imageView"
+        android:layout_toRightOf="@+id/productImage_imageView"
+        android:padding="1dp"
+        android:src="@drawable/ic_remove_white_24dp"
+        android:background="@color/lightGrey"/>
+
+    <TextView
+        android:id="@+id/productName_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/removeProduct_imageView"
+        android:layout_alignStart="@+id/removeProduct_imageView"
+        android:layout_below="@+id/addProduct_imageView"
+        android:maxLines="2"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/textSize_extraLarge"
+        android:textStyle="bold"
+        tools:text="Blusa do Imperio"/>
+
+    <TextView
+        android:id="@+id/productPrice_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/productName_textView"
+        android:layout_toEndOf="@+id/productImage_imageView"
+        android:layout_toRightOf="@+id/productImage_imageView"
+        android:gravity="end"
+        android:maxLines="2"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/textSize_large"
+        tools:text="R$ 79,90"/>
+
+    <TextView
+        android:id="@+id/productTotalPrice_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/productPrice_textView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"
+        android:maxLines="2"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/textSize_large"
+        tools:text="R$ 159,80"/>
+
+    <!--android:layout_toLeftOf="@+id/addProduct_button"-->
+    <!--android:layout_toStartOf="@id/addProduct_button"-->
+
+    <!--<Button-->
+    <!--android:id="@+id/addProduct_button"-->
+    <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:background="@drawable/ic_loading_image"/>-->
+
+    <!--<Button-->
+    <!--android:id="@+id/removeProduct_button"-->
+    <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_below="@+id/addProduct_button"-->
+    <!--android:text="TEST"/>-->
+
+    <View
+        android:id="@+id/separatorView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/productTotalPrice_textView"
+        android:layout_marginTop="3dp"
+        android:background="@color/lightGrey"/>
+
+</RelativeLayout>

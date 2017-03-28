@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!-- Para conseguir utilizar os spaces de height 0 para centralizar o relative no scroll -->
+    <!-- Se utilizar gravity o scrollview corta o hint dos primeiros campos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/loading_progressBar"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/name_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/name_inputLayout"
+                android:layout_alignTop="@+id/name_inputLayout"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_person_dark_indigo_32dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/name_inputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/name_imageView"
+                android:layout_toRightOf="@+id/name_imageView"
+                android:inputType="textPassword"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/name_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/content_payment_name_editTxt_hint"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/textSize_medium"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/cardNumber_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cardNumber_inputLayout"
+                android:layout_alignTop="@+id/cardNumber_inputLayout"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_card_dark_indigo_32dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cardNumber_inputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_inputLayout"
+                android:layout_toEndOf="@+id/cardNumber_imageView"
+                android:layout_toRightOf="@+id/cardNumber_imageView"
+                android:orientation="horizontal"
+                app:counterMaxLength="20">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cardNumber_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/content_payment_cardNumber_editTxt_hint"
+                    android:inputType="number"
+                    android:maxLength="20"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/textSize_medium"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/cardExpDate_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cardExpMonth_inputLayout"
+                android:layout_alignTop="@+id/cardExpMonth_inputLayout"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_date_dark_indigo_32dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cardExpMonth_inputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardNumber_inputLayout"
+                android:layout_toEndOf="@+id/cardExpDate_imageView"
+                android:layout_toRightOf="@+id/cardExpDate_imageView"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cardExpMonth_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/content_payment_cardExpMonth_editTxt_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:minWidth="65dp"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/textSize_medium"
+                    tools:text="05/20"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cardExpYear_inputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardNumber_inputLayout"
+                android:layout_toEndOf="@+id/cardExpMonth_inputLayout"
+                android:layout_toRightOf="@+id/cardExpMonth_inputLayout"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cardExpYear_editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/content_payment_cardExpYear_editTxt_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:minWidth="65dp"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/textSize_medium"
+                    tools:text="05/20"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/cvv_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cvv_inputLayout"
+                android:layout_alignTop="@+id/cvv_inputLayout"
+                android:layout_marginEnd="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/cardExpYear_inputLayout"
+                android:layout_toRightOf="@+id/cardExpYear_inputLayout"
+                android:src="@drawable/ic_lock_dark_indigo_32dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cvv_inputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardNumber_inputLayout"
+                android:layout_toEndOf="@+id/cvv_imageView"
+                android:layout_toRightOf="@+id/cvv_imageView">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/cvv_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/content_payment_cvv_editTxt_hint"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/textSize_medium"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</ScrollView>

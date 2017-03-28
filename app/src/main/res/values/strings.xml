@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Mos Eisley</string>
+
+    <string name="element_productSalesmanLabel_text">Vendedor:</string>
+
+    <string name="transaction_activity_action_proceed_text">Continuar</string>
+    <string name="transaction_activity_action_pay_text">Finalizar compra</string>
+
+    <string name="transaction_activity_payment_title">Checkout</string>
+    <string name="transaction_activity_cart_title">Carrinho</string>
+    <string name="receipt_title">Recibo</string>
+
+    <string name="content_payment_cardNumber_editTxt_hint">Número do cartão</string>
+    <string name="content_payment_cvv_editTxt_hint">Código de segurança</string>
+    <string name="content_payment_name_editTxt_hint">Nome completo</string>
+    <string name="content_payment_cardExpMonth_editTxt_hint">Mês</string>
+    <string name="content_payment_cardExpYear_editTxt_hint">Ano</string>
+    <string name="receipt_thanks_message_text">Obrigado por comprar conosco!</string>
+    <string name="transaction_no_items_text">Nenhum item adicionado</string>
+
+</resources>
